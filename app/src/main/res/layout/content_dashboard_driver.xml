@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:alpha="0.8"
+            android:scaleType="fitXY"
+            android:src="@drawable/head" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="163dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="2dp"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/tvAccountName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="Account Name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/tvAccountNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="0123456789"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/tvBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="N1,521,374.54"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="40dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="#EDEDED">
+
+                <TextView
+                    android:id="@+id/tvBookBal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_span="1"
+                    android:text="Book Balance N0.00"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="147dp"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:gravity="right"
+                    android:text="View History"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp" />
+            </TableRow>
+
+
+            />
+        </TableLayout>
+
+    </FrameLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_margin="5dp">
+
+            <ImageView
+                android:id="@+id/imgFundTransfer"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/buyairtime" />
+
+            <ImageView
+                android:id="@+id/imgPayBills"
+                android:layout_width="112dp"
+                android:layout_height="71dp"
+                android:src="@drawable/paybills" />
+
+            <ImageView
+                android:id="@+id/imgBuyAirTime"
+                android:layout_width="112dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/fundtransfer" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            >
+
+            <TextView
+                android:id="@+id/tvFundTransfer"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Fund Transfer" />
+
+            <TextView
+                android:id="@+id/tvPayBills"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:text="Pay Bills" />
+
+
+            <TextView
+                android:id="@+id/tvBuyAirTime"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:text="Buy Airtime" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/imgTransactionHistory"
+                android:layout_width="116dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/transactionhistory" />
+
+            <ImageView
+                android:id="@+id/imgAssetMannagement"
+                android:layout_width="127dp"
+                android:layout_height="71dp"
+                android:src="@drawable/assetmanagement" />
+
+            <ImageView
+                android:id="@+id/imgHelpSupport"
+                android:layout_width="112dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/helpandsupport" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            >
+
+            <TextView
+                android:id="@+id/tvTransactionHistory"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:lines="2"
+                android:text="Transaction History" />
+
+            <TextView
+                android:id="@+id/tvAssetManagement"
+                android:layout_width="58dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:lines="2"
+                android:text="Asset Management" />
+
+
+            <TextView
+                android:id="@+id/tvHelpSupport"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:lines="2"
+                android:text="Help &amp; Support" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="305dp"
+                android:layout_height="116dp"
+                android:layout_margin="20dp"
+                android:layout_span="3"
+                android:src="@drawable/banner" />
+
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

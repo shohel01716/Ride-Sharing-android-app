@@ -1,6 +1,7 @@
 package com.techline.rydeshare;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +24,9 @@ public class signup extends AppCompatActivity {
     TextView tvSin;
     ImageView sback;
     String strUser, strPass, strFullName, strEmail, strPhone, strFName,strLName;
+    public static final String MyPREFERENCES = "MyPrefs";
 
+    SharedPreferences SP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,9 +85,24 @@ public class signup extends AppCompatActivity {
                 makeRideShareInsertUserQuery(strFName ,strLName, strFullName, strEmail, strUser, strPhone,
                         "SURULERE", strPass, "LAGOS", "NIGERIA",  "PASSENGER");
                 Log.d(TAG, "after saving in open Users Table");
+                Log.d(TAG, "before saving in open shared Preferences");
+                populatePreferences();
+                Log.d(TAG, "after saving in open shared Preferences");
             }
         });
 
+    }
+
+    private void populatePreferences() {
+        SP = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = SP.edit();
+        editor.putString("strUser", strUser);
+        editor.putString("strPass", strPass);
+        editor.putString("strFName", strFName);
+        editor.putString("strLName", strLName);
+        editor.putString("strPhone", strPhone);
+        editor.putString("strFullName", strFullName);
+        editor.putString("strEmail", strEmail);
     }
 
     private void makeRideShareInsertUserQuery(String strFirstName, String strLstName, String strFullName, String strEmail,
@@ -120,7 +138,7 @@ public class signup extends AppCompatActivity {
             if (RideShareSearchResults != null && !RideShareSearchResults.equals("")) {
                 Log.d(TAG, "RideShareSearchResults is :" + RideShareSearchResults);
            // put valeus in intent and fire intent
-                Intent it = new Intent(signup.this, DashboardPass.class);
+                Intent it = new Intent(signup.this, EditProfilePass.class);
                 it.putExtra("strFName", strFName);
                 it.putExtra("strLName", strLName);
                 it.putExtra("strFullName", strFullName);

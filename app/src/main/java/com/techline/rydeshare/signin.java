@@ -1,6 +1,7 @@
 package com.techline.rydeshare;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,9 @@ public class signin extends AppCompatActivity {
     ImageView sback;
     String strUser, strPass, globalSearchResult, strFullName, strEmail, strPhone, strFName,
             strLName, strBalance, strUserType, strcurrent_city;
+    public static final String MyPREFERENCES = "MyPrefs";
+
+    SharedPreferences SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,13 +166,13 @@ public class signin extends AppCompatActivity {
                     Log.d(TAG, "strUserType is: " + strUserType);
                     strcurrent_city = srDetail.getString("current_city");
                     Log.d(TAG, "strcurrent_city is: " + strcurrent_city);
-
+                    getSharedPrefDataFromDb();
                 }
                 Intent it;
                 if (strUserType.equalsIgnoreCase("PASSENGER")) {
-                    it = new Intent(signin.this, DashboardPass.class);
+                    it = new Intent(signin.this, EditProfilePass.class);
                 } else {
-                    it = new Intent(signin.this, DashboardDriver.class);
+                    it = new Intent(signin.this, EditProfileDriver.class);
 
                 }
 
@@ -193,6 +197,20 @@ public class signin extends AppCompatActivity {
 
         }
     }
+
+    private void getSharedPrefDataFromDb() {
+        SP = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = SP.edit();
+        editor.putString("strUser", strUser);
+        editor.putString("strPass", strPass);
+        editor.putString("strFName", strFName);
+        editor.putString("strLName", strLName);
+        editor.putString("strPhone", strPhone);
+        editor.putString("strFullName", strFullName);
+        editor.putString("strEmail", strEmail);
+        editor.putString("strUserType", strUserType);
+    }
+
 
     private String globalSearchResultMethod() {
         return globalSearchResult;

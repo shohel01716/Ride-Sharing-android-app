@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.techline.rydeshare">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -15,9 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".signupDriver"></activity>
-        <activity android:name=".DashboardDriver" />
-        <activity android:name=".DashboardPass" />
+        <activity
+            android:name=".DashboardDriver"
+            android:label="@string/title_activity_dashboard_driver"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".DashboardPass"
+            android:label="@string/title_activity_dashboard_pass"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".signupDriver" />
+        <activity
+            android:name=".EditProfileDriver"
+            android:label="Edit Profile" />
+        <activity
+            android:name=".EditProfilePass"
+            android:label="Edit Profile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".signin" />
-        <activity android:name=".signup" />
+        <activity
+            android:name=".signin"
+            android:label="Sign In" />
+        <activity
+            android:name=".signup"
+            android:label="Sign Up" />
     </application>
 
 </manifest>

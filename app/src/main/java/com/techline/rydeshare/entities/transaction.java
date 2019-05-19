@@ -2,33 +2,37 @@ package com.techline.rydeshare.entities;
 
 public class transaction {
     private String tran_id;
-    private String driver_nme;
+    private String driver_name;
     private String pass_name;
     private String tran_date;
     private String source;
-    private String destintion;
+    private String destination;
     private String amount_due;
     private String amount_paid;
     private String amount_deducted;
     private String payment_type;
+    private String channel;
+    private String channel_trans_id;
 
     public transaction() {
     }
 
-    public transaction(String tran_id, String driver_nme, String pass_name,
-                       String tran_date, String source, String destintion,
-                       String amount_due, String amount_paid, String
-                               amount_deducted, String payment_type) {
+    public transaction(String tran_id, String driver_name, String pass_name,
+                       String tran_date, String source, String destination,
+                       String amount_due, String amount_paid, String amount_deducted,
+                       String payment_type, String channel, String channel_trans_id) {
         this.tran_id = tran_id;
-        this.driver_nme = driver_nme;
+        this.driver_name = driver_name;
         this.pass_name = pass_name;
         this.tran_date = tran_date;
         this.source = source;
-        this.destintion = destintion;
+        this.destination = destination;
         this.amount_due = amount_due;
         this.amount_paid = amount_paid;
         this.amount_deducted = amount_deducted;
         this.payment_type = payment_type;
+        this.channel = channel;
+        this.channel_trans_id = channel_trans_id;
     }
 
     public String getTran_id() {
@@ -39,12 +43,12 @@ public class transaction {
         this.tran_id = tran_id;
     }
 
-    public String getDriver_nme() {
-        return driver_nme;
+    public String getDriver_name() {
+        return driver_name;
     }
 
-    public void setDriver_nme(String driver_nme) {
-        this.driver_nme = driver_nme;
+    public void setDriver_name(String driver_name) {
+        this.driver_name = driver_name;
     }
 
     public String getPass_name() {
@@ -71,12 +75,12 @@ public class transaction {
         this.source = source;
     }
 
-    public String getDestintion() {
-        return destintion;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setDestintion(String destintion) {
-        this.destintion = destintion;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public String getAmount_due() {
@@ -109,5 +113,21 @@ public class transaction {
 
     public void setPayment_type(String payment_type) {
         this.payment_type = payment_type;
+    }
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public String getChannel_trans_id() {
+        return channel_trans_id;
+    }
+
+    public void setChannel_trans_id(String channel_trans_id) {
+        this.channel_trans_id = channel_trans_id;
     }
 }
