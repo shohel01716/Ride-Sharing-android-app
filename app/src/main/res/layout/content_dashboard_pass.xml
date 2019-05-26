@@ -6,14 +6,14 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#000000">
 
         <ImageView
             android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="234dp"
+            android:layout_height="match_parent"
             android:alpha="0.8"
             android:scaleType="fitXY"
             android:src="@drawable/head" />
@@ -22,9 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="163dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="15dp"
             android:background="#fff"
             android:orientation="vertical">
 
@@ -130,48 +130,50 @@
                 android:id="@+id/imgFundTransfer"
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/buyairtime" />
+                android:src="@drawable/start" />
 
             <ImageView
                 android:id="@+id/imgPayBills"
                 android:layout_width="112dp"
-                android:layout_height="71dp"
-                android:src="@drawable/paybills" />
+                android:layout_height="83dp"
+                android:src="@drawable/add" />
 
             <ImageView
                 android:id="@+id/imgBuyAirTime"
                 android:layout_width="112dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/fundtransfer" />
+                android:src="@drawable/transactionhistory" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="5dp"
-            >
+            android:layout_marginRight="5dp">
 
             <TextView
-                android:id="@+id/tvFundTransfer"
+                android:id="@+id/tvOwnAcctTab"
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
-                android:text="Fund Transfer" />
+                android:gravity="center"
+                android:text="Start Ride" />
 
             <TextView
-                android:id="@+id/tvPayBills"
+                android:id="@+id/tvCoronationAcctTab"
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
-                android:text="Pay Bills" />
+                android:gravity="center"
+                android:text="Add Funds" />
 
 
             <TextView
-                android:id="@+id/tvBuyAirTime"
+                android:id="@+id/tvOtherBankAcctTab"
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
-                android:text="Buy Airtime" />
+                android:gravity="center"
+                android:text="Transaction History" />
 
         </TableRow>
 
@@ -180,8 +182,8 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
 
             >
 
@@ -189,13 +191,13 @@
                 android:id="@+id/imgTransactionHistory"
                 android:layout_width="116dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/transactionhistory" />
+                android:src="@drawable/route1" />
 
             <ImageView
                 android:id="@+id/imgAssetMannagement"
                 android:layout_width="127dp"
                 android:layout_height="71dp"
-                android:src="@drawable/assetmanagement" />
+                android:src="@drawable/route2" />
 
             <ImageView
                 android:id="@+id/imgHelpSupport"
@@ -208,26 +210,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="5dp"
-            >
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp">
 
             <TextView
                 android:id="@+id/tvTransactionHistory"
                 android:layout_width="86dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 android:lines="2"
-                android:text="Transaction History" />
+                android:text="Register Route 1" />
 
             <TextView
                 android:id="@+id/tvAssetManagement"
                 android:layout_width="58dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 android:lines="2"
-                android:text="Asset Management" />
+                android:text="Register Route 2" />
 
 
             <TextView
@@ -235,19 +238,22 @@
                 android:layout_width="72dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 android:lines="2"
-                android:text="Help &amp; Support" />
+                android:text="Help and Support" />
 
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="305dp"
+                android:layout_width="wrap_content"
                 android:layout_height="116dp"
                 android:layout_margin="20dp"
                 android:layout_span="3"
+                android:gravity="center"
                 android:src="@drawable/banner" />
 
         </TableRow>
