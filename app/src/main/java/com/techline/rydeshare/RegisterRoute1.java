@@ -15,16 +15,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DashboardDriver extends AppCompatActivity
+public class RegisterRoute1 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard_driver);
+        setContentView(R.layout.activity_register_route1);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("Route 1"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#002F55")));
 
 
 
@@ -60,7 +64,7 @@ public class DashboardDriver extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard_driver, menu);
+        getMenuInflater().inflate(R.menu.register_route1, menu);
         return true;
     }
 

@@ -17,9 +17,56 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".HelpSupport"
+            android:label="@string/title_activity_help_support"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.techline.rydeshare.DashboardPass" />
+        </activity>
+        <activity
+            android:name=".RegisterRoute2"
+            android:label="@string/title_activity_register_route2"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".RegisterRoute1"
+            android:label="@string/title_activity_register_route1"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".TransactionHistory"
+            android:label="@string/title_activity_transaction_history"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.techline.rydeshare.DashboardPass" />
+        </activity>
+        <activity
+            android:name=".AddFunds"
+            android:label="@string/title_activity_add_funds"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.techline.rydeshare.DashboardPass" />
+        </activity>
+        <activity
+            android:name=".StartRide"
+            android:label="@string/title_activity_start_ride"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.techline.rydeshare.DashboardPass" />
+        </activity>
+        <activity
             android:name=".DashboardDriver"
             android:label="@string/title_activity_dashboard_driver"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DashboardPass"
             android:label="@string/title_activity_dashboard_pass"
@@ -27,10 +74,16 @@
         <activity android:name=".signupDriver" />
         <activity
             android:name=".EditProfileDriver"
-            android:label="Edit Profile" />
+            android:label="Edit Profile"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            />
         <activity
             android:name=".EditProfilePass"
-            android:label="Edit Profile" />
+            android:label="Edit Profile"
+            android:parentActivityName=".DashboardPass"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -20,6 +20,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class signin extends AppCompatActivity {
     private static final String TAG = "SIGN_IN";
@@ -28,7 +31,8 @@ public class signin extends AppCompatActivity {
     TextView tvSin;
     ImageView sback;
     String strUser, strPass, globalSearchResult, strFullName, strEmail, strPhone, strFName,
-            strLName, strBalance, strUserType, strcurrent_city;
+            strLName, strBalance, strUserType, strCurrentCity, accountNumber;
+    public static final String status = "MyPrefs";
     public static final String MyPREFERENCES = "MyPrefs";
 
     SharedPreferences SP;
@@ -164,9 +168,11 @@ public class signin extends AppCompatActivity {
 
                     strUserType = srDetail.getString("user_type");
                     Log.d(TAG, "strUserType is: " + strUserType);
-                    strcurrent_city = srDetail.getString("current_city");
-                    Log.d(TAG, "strcurrent_city is: " + strcurrent_city);
-                    getSharedPrefDataFromDb();
+                    strCurrentCity = srDetail.getString("current_city");
+                    Log.d(TAG, "strcurrent_city is: " + strCurrentCity);
+
+                    accountNumber = generateAccountNumber();
+                    populatePreferences();
                 }
                 Intent it;
                 if (strUserType.equalsIgnoreCase("PASSENGER")) {
@@ -184,7 +190,11 @@ public class signin extends AppCompatActivity {
                 it.putExtra("strUser", strUser);
                 it.putExtra("strPass", strPass);
                 it.putExtra("strBalance", strBalance);
-                it.putExtra("strCity", strcurrent_city);
+                it.putExtra("strCurrentCity", strCurrentCity);
+
+                Log.d(TAG, "before saving in open shared Preferences");
+                populatePreferences();
+                Log.d(TAG, "after saving in open shared Preferences");
 
                 Log.d(TAG, "after saving object");
                 signin.this.startActivity(it);
@@ -198,7 +208,27 @@ public class signin extends AppCompatActivity {
         }
     }
 
-    private void getSharedPrefDataFromDb() {
+    private String generateAccountNumber() {
+        String myPrefix = "";
+        if (strUserType.equalsIgnoreCase("PASSENGER")) {
+            myPrefix = "P";
+        } else {
+            myPrefix = "D";
+        }
+        Calendar cal = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        cal.add(Calendar.DATE, 0);
+        String strDateInFormat = dateFormat.format(cal.getTime());
+        System.out.println("strDateInFormat is: " + strDateInFormat);
+        strDateInFormat = strDateInFormat.replace("-", "");
+        strDateInFormat = strDateInFormat.replace(" ", "");
+        strDateInFormat = strDateInFormat.replace(":", "");
+        strDateInFormat = myPrefix + strDateInFormat;
+        System.out.println("strDateInFormat is: " + strDateInFormat);
+        return strDateInFormat;
+    }
+
+    private void populatePreferences() {
         SP = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = SP.edit();
         editor.putString("strUser", strUser);
@@ -208,7 +238,11 @@ public class signin extends AppCompatActivity {
         editor.putString("strPhone", strPhone);
         editor.putString("strFullName", strFullName);
         editor.putString("strEmail", strEmail);
+        editor.putString("strBalance", strBalance);
         editor.putString("strUserType", strUserType);
+        editor.putString("strCurrentCity", strCurrentCity);
+        editor.putString("accountNumber", accountNumber);
+        editor.putString("status", status);
     }
 
 

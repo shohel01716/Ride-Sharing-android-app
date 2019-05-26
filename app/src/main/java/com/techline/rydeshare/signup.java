@@ -16,6 +16,9 @@ import com.techline.rydeshare.util.NetworkUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class signup extends AppCompatActivity {
     private static final String TAG = "PASSENGER_SIGNUP";
@@ -23,7 +26,8 @@ public class signup extends AppCompatActivity {
     EditText txtUsername, txtPssword, txtFullname, txtPhone, txtEmail,txtFname,txtLname;
     TextView tvSin;
     ImageView sback;
-    String strUser, strPass, strFullName, strEmail, strPhone, strFName,strLName;
+    String strUser, strPass, strFullName, strEmail, strPhone, strFName,strLName,
+            strCurrentCity,accountNumber,strUserType;
     public static final String MyPREFERENCES = "MyPrefs";
 
     SharedPreferences SP;
@@ -86,6 +90,7 @@ public class signup extends AppCompatActivity {
                         "SURULERE", strPass, "LAGOS", "NIGERIA",  "PASSENGER");
                 Log.d(TAG, "after saving in open Users Table");
                 Log.d(TAG, "before saving in open shared Preferences");
+                accountNumber = generatedAccountNumber();
                 populatePreferences();
                 Log.d(TAG, "after saving in open shared Preferences");
             }
@@ -93,8 +98,29 @@ public class signup extends AppCompatActivity {
 
     }
 
+    private String generatedAccountNumber() {
+        String myPrefix = "";
+        strUserType ="PASSENGER";
+        if (strUserType.equalsIgnoreCase("PASSENGER")) {
+            myPrefix = "P";
+        } else {
+            myPrefix = "D";
+        }
+        Calendar cal = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        cal.add(Calendar.DATE, 0);
+        String strDateInFormat = dateFormat.format(cal.getTime());
+        System.out.println("strDateInFormat is: " + strDateInFormat);
+        strDateInFormat = strDateInFormat.replace("-", "");
+        strDateInFormat = strDateInFormat.replace(" ", "");
+        strDateInFormat = strDateInFormat.replace(":", "");
+        strDateInFormat = myPrefix + strDateInFormat;
+        System.out.println("strDateInFormat is: " + strDateInFormat);
+        return strDateInFormat;
+    }
+
     private void populatePreferences() {
-        SP = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+        SP = getApplicationContext().getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = SP.edit();
         editor.putString("strUser", strUser);
         editor.putString("strPass", strPass);
@@ -103,6 +129,11 @@ public class signup extends AppCompatActivity {
         editor.putString("strPhone", strPhone);
         editor.putString("strFullName", strFullName);
         editor.putString("strEmail", strEmail);
+        editor.putString("strBalance", "0.00");
+        editor.putString("strUserType", "PASSENGER");
+        editor.putString("strCurrentCity", strCurrentCity);
+        editor.putString("accountNumber", accountNumber);
+        editor.putString("status", "ACTIVE");
     }
 
     private void makeRideShareInsertUserQuery(String strFirstName, String strLstName, String strFullName, String strEmail,

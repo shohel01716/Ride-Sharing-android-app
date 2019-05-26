@@ -37,12 +37,12 @@
                 android:layout_marginBottom="2dp">
 
                 <TextView
-                    android:id="@+id/tvAccountName"
+                    android:id="@+id/tvHiFName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_span="2"
-                    android:text="Account Name"
-                    android:textColor="@color/colorPrimary"
+                    android:text="Hi First Name"
+                    android:textColor="#003057"
                     android:textSize="16dp" />
             </TableRow>
 
@@ -59,8 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_span="2"
-                    android:text="0123456789"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="#003057"
                     android:textSize="20dp" />
             </TableRow>
 
@@ -77,8 +76,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_span="2"
-                    android:text="N1,521,374.54"
-                    android:textColor="@color/colorPrimary"
+                    android:text="BAL: N24,790"
+                    android:textColor="#003057"
                     android:textSize="40dp" />
             </TableRow>
 
@@ -92,22 +91,23 @@
                 android:background="#EDEDED">
 
                 <TextView
-                    android:id="@+id/tvBookBal"
+                    android:id="@+id/tvAddPromoCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_span="1"
-                    android:text="Book Balance N0.00"
-                    android:textColor="@color/colorPrimary"
+                    android:text="Add Promo Code"
+                    android:textColor="#003057"
                     android:textSize="16dp" />
 
                 <TextView
+                    android:id="@+id/tvEditProfile"
                     android:layout_width="147dp"
                     android:layout_height="match_parent"
                     android:layout_span="1"
                     android:gravity="right"
-                    android:text="View History"
-                    android:textColor="@color/colorPrimary"
+                    android:text="Edit Profile"
+                    android:textColor="#003057"
                     android:textSize="16dp" />
             </TableRow>
 
@@ -127,19 +127,19 @@
             android:layout_margin="5dp">
 
             <ImageView
-                android:id="@+id/imgFundTransfer"
+                android:id="@+id/imgStartBig"
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/start" />
 
             <ImageView
-                android:id="@+id/imgPayBills"
+                android:id="@+id/imgAddFunds"
                 android:layout_width="112dp"
                 android:layout_height="83dp"
                 android:src="@drawable/add" />
 
             <ImageView
-                android:id="@+id/imgBuyAirTime"
+                android:id="@+id/imgTransactionHiistory"
                 android:layout_width="112dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/transactionhistory" />
@@ -151,13 +151,16 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp">
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
+            >
 
             <TextView
                 android:id="@+id/tvOwnAcctTab"
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="Start Ride" />
 
             <TextView
@@ -165,6 +168,7 @@
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="Add Funds" />
 
 
@@ -173,6 +177,8 @@
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:lines="2"
+                android:textStyle="bold"
                 android:text="Transaction History" />
 
         </TableRow>
@@ -188,13 +194,13 @@
             >
 
             <ImageView
-                android:id="@+id/imgTransactionHistory"
+                android:id="@+id/imgRoute1"
                 android:layout_width="116dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/route1" />
 
             <ImageView
-                android:id="@+id/imgAssetMannagement"
+                android:id="@+id/imgRoute2"
                 android:layout_width="127dp"
                 android:layout_height="71dp"
                 android:src="@drawable/route2" />
@@ -221,6 +227,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:lines="2"
+                android:textStyle="bold"
                 android:text="Register Route 1" />
 
             <TextView
@@ -230,6 +237,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:lines="2"
+                android:textStyle="bold"
                 android:text="Register Route 2" />
 
 
@@ -240,6 +248,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:lines="2"
+                android:textStyle="bold"
                 android:text="Help and Support" />
 
         </TableRow>
@@ -249,6 +258,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imgStart"
                 android:layout_width="wrap_content"
                 android:layout_height="116dp"
                 android:layout_margin="20dp"

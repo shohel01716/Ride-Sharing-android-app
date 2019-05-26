@@ -12,13 +12,16 @@ public class user {
     private String pass;
     private String promo_code;
     private String formatted_date;
+    private String accountNumber;
+    private String status;
 
     public user() {
     }
 
-    public user(String firstname, String lastname, String fullname,
-                String phone, String email, String type, String balance,
-                String user, String pass, String promo_code, String formatted_date) {
+    public user(String firstname, String lastname, String fullname, String phone,
+                String email, String type, String balance, String user, String pass,
+                String promo_code, String formatted_date, String accountNumber,
+                String status) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.fullname = fullname;
@@ -30,6 +33,8 @@ public class user {
         this.pass = pass;
         this.promo_code = promo_code;
         this.formatted_date = formatted_date;
+        this.accountNumber = accountNumber;
+        this.status = status;
     }
 
     public String getFirstname() {
@@ -118,5 +123,21 @@ public class user {
 
     public void setFormatted_date(String formatted_date) {
         this.formatted_date = formatted_date;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

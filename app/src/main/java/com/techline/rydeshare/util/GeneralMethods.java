@@ -1,6 +1,8 @@
 package com.techline.rydeshare.util;
 
 public class GeneralMethods {
+
+
     public String toCommaAmount(String strTotal) {
         int strLen = strTotal.length();
         StringBuilder builder;
