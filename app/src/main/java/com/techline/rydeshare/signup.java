@@ -99,7 +99,7 @@ public class signup extends AppCompatActivity {
     }
 
     private String generatedAccountNumber() {
-        String myPrefix = "";
+        String myPrefix = "P";
         strUserType ="PASSENGER";
         if (strUserType.equalsIgnoreCase("PASSENGER")) {
             myPrefix = "P";

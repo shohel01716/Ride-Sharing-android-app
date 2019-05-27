@@ -16,6 +16,9 @@ import com.techline.rydeshare.util.NetworkUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class signupDriver extends AppCompatActivity {
     private static final String TAG = "PASSENGER_SIGNUP";
@@ -23,7 +26,8 @@ public class signupDriver extends AppCompatActivity {
     EditText txtUsername, txtPssword, txtFname,txtLname, txtPhone, txtEmail, txtCity;
     TextView tvSin;
     ImageView sback;
-    String strUser, strPass, strFName,strLName, strEmail, strPhone, strCity, strFullName;
+    String strUser, strPass, strFName,strLName, strEmail, strPhone, strCity,
+            strFullName,strUserType,accountNumber,strCurrentCity ;
     public static final String MyPREFERENCES = "MyPrefs";
 
     SharedPreferences SP;
@@ -104,6 +108,7 @@ public class signupDriver extends AppCompatActivity {
                         strCity, strPass, "LAGOS", "NIGERIA", "DRIVER");
                 Log.d(TAG, "after saving in open Users Table");
                 Log.d(TAG, "before saving in open shared Preferences");
+                accountNumber = generatedAccountNumber();
                 populatePreferences();
                 Log.d(TAG, "after saving in open shared Preferences");
 
@@ -112,8 +117,24 @@ public class signupDriver extends AppCompatActivity {
 
     }
 
+    private String generatedAccountNumber() {
+        String myPrefix = "D";
+        strUserType ="DRIVER";
+
+        Calendar cal = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        cal.add(Calendar.DATE, 0);
+        String strDateInFormat = dateFormat.format(cal.getTime());
+        System.out.println("strDateInFormat is: " + strDateInFormat);
+        strDateInFormat = strDateInFormat.replace("-", "");
+        strDateInFormat = strDateInFormat.replace(" ", "");
+        strDateInFormat = strDateInFormat.replace(":", "");
+        strDateInFormat = myPrefix + strDateInFormat;
+        System.out.println("strDateInFormat is: " + strDateInFormat);
+        return strDateInFormat;
+    }
     private void populatePreferences() {
-        SP = getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+        SP = getApplicationContext().getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = SP.edit();
         editor.putString("strUser", strUser);
         editor.putString("strPass", strPass);
@@ -122,7 +143,13 @@ public class signupDriver extends AppCompatActivity {
         editor.putString("strPhone", strPhone);
         editor.putString("strFullName", strFullName);
         editor.putString("strEmail", strEmail);
+        editor.putString("strBalance", "0.00");
+        editor.putString("strUserType", "DRIVER");
+        editor.putString("strCurrentCity", strCurrentCity);
+        editor.putString("accountNumber", accountNumber);
+        editor.putString("status", "ACTIVE");
     }
+
 
     private void makeRideShareInsertUserQuery(String strFirstName, String strLstName, String strFullName, String strEmail,
                                               String strUser, String strPhone, String curreCityValue,
