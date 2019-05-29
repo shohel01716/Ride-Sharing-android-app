@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ public class EditProfileDriver extends AppCompatActivity {
     EditText eTxtFullName, eTxtEmail,eTxtPhone, eTxtPassword, eTxtFirstName, eTxtLastName, eTxtCity;
     private Bundle extras;
     String strUser, strPass, strFullName, strEmail, strPhone, strFName,strLName,strCity,strBalance;
-TextView txtBalValue;
+TextView txtBalValue, btnContinue;
     public static final String MyPREFERENCES = "MyPrefs";
 
     SharedPreferences SP;
@@ -31,6 +32,7 @@ TextView txtBalValue;
         eTxtPhone = findViewById(R.id.eTxtPhone);
         eTxtCity = findViewById(R.id.eTxtCity);
         txtBalValue = findViewById(R.id.txtBalValue);
+        btnContinue = findViewById(R.id.btnContinue);
 
         extras = getIntent().getExtras();
         if (extras != null) {
@@ -56,12 +58,13 @@ TextView txtBalValue;
 
         }
 
-        //get values on click
-        //onclick listeners FORbuttons
-
-       /* Log.d(TAG, "before saving in open shared Preferences");
-        populatePreferences();
-        Log.d(TAG, "after saving in open shared Preferences");*/
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(EditProfileDriver.this, DashboardDriver.class);
+                startActivity(it);
+            }
+        });
     }
 
 
@@ -74,5 +77,10 @@ TextView txtBalValue;
         Intent itLogout = new Intent(EditProfileDriver.this, signin.class);
         startActivity(itLogout);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

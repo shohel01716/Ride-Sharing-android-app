@@ -156,7 +156,8 @@ public class signupDriver extends AppCompatActivity {
                                               String strPass, String stateValue, String CountryValue,
                                               String type) {
         URL RideShareSelectUserURl = NetworkUtils.buildInsertUserUrl(strFirstName, strLstName, strFullName, strEmail, strUser,
-                strPhone, strPass, "LAGOS", "NIGERIA", "NA", "DRIVER", "0.00");
+                strPhone, strPass, "LAGOS", "NIGERIA", "NA", "DRIVER",
+                "0.00", accountNumber, "ACTIVE");
         Log.d(TAG, "RideShareSearchUrl is: " + RideShareSelectUserURl.toString());
         // COMPLETED (4) Create a new RideShareQueryTask and call its execute method, passing in the url to query
         new signupDriver.RideShareInsertQueryTask().execute(RideShareSelectUserURl);

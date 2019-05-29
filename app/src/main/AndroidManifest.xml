@@ -66,24 +66,34 @@
         <activity
             android:name=".DashboardDriver"
             android:label="@string/title_activity_dashboard_driver"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DashboardPass"
             android:label="@string/title_activity_dashboard_pass"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".signupDriver" />
         <activity
             android:name=".EditProfileDriver"
             android:label="Edit Profile"
-            android:parentActivityName=".DashboardPass"
+            android:parentActivityName=".DashboardDriver"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            />
+            >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.techline.rydeshare.DashboardDriver" />
+            </activity>
         <activity
             android:name=".EditProfilePass"
             android:label="Edit Profile"
             android:parentActivityName=".DashboardPass"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            />
+            >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.techline.rydeshare.DashboardPass" />
+            </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

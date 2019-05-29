@@ -28,7 +28,7 @@ public class signin extends AppCompatActivity {
     TextView tvSin;
     ImageView sback;
     String strUser, strPass, globalSearchResult, strFullName, strEmail, strPhone, strFName,
-            strLName, strBalance, strUserType, strCurrentCity;
+            strLName, strBalance, strUserType, strCurrentCity, accountNumber, status;
     public static final String MyPREFERENCES = "MyPrefs";
 
     SharedPreferences SP;
@@ -164,15 +164,22 @@ public class signin extends AppCompatActivity {
 
                     strUserType = srDetail.getString("user_type");
                     Log.d(TAG, "strUserType is: " + strUserType);
+
                     strCurrentCity = srDetail.getString("current_city");
                     Log.d(TAG, "strcurrent_city is: " + strCurrentCity);
+
+                    accountNumber = srDetail.getString("accountNumber");
+                    Log.d(TAG, "accountNumber is: " + accountNumber);
+
+                    status = srDetail.getString("status");
+                    Log.d(TAG, "status is: " + status);
                     getSharedPrefDataFromDb();
                 }
                 Intent it;
                 if (strUserType.equalsIgnoreCase("PASSENGER")) {
-                    it = new Intent(signin.this, EditProfilePass.class);
+                    it = new Intent(signin.this, DashboardPass.class);
                 } else {
-                    it = new Intent(signin.this, EditProfileDriver.class);
+                    it = new Intent(signin.this, DashboardDriver.class);
 
                 }
 
@@ -219,6 +226,8 @@ public class signin extends AppCompatActivity {
         editor.putString("strFullName", strFullName);
         editor.putString("strEmail", strEmail);
         editor.putString("strUserType", strUserType);
+        editor.putString("status", status);
+        editor.putString("accountNumber", accountNumber);
     }
 
 

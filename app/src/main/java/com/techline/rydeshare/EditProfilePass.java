@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,7 +14,7 @@ public class EditProfilePass extends AppCompatActivity {
     private Bundle extras;
     String strUser, strPass, strFullName, strEmail, strPhone, strFName,strLName,strBalance;
 
-    TextView txtBalValue;
+    TextView txtBalValue, btnContinue;
     public static final String MyPREFERENCES = "MyPrefs";
 
     SharedPreferences SP;
@@ -28,6 +29,7 @@ public class EditProfilePass extends AppCompatActivity {
         eTxtPassword = findViewById(R.id.eTxtPassword);
         eTxtPhone = findViewById(R.id.eTxtPhone);
         txtBalValue = findViewById(R.id.txtBalValue);
+        btnContinue = findViewById(R.id.btnContinue);
 
 
 
@@ -56,11 +58,13 @@ public class EditProfilePass extends AppCompatActivity {
         }
 
 
-        //get values on click
-        //onclick listeners
-         /* Log.d(TAG, "before saving in open shared Preferences");
-        populatePreferences();
-        Log.d(TAG, "after saving in open shared Preferences");*/
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(EditProfilePass.this, DashboardPass.class);
+                startActivity(it);
+            }
+        });
     }
 
 
@@ -73,5 +77,10 @@ public class EditProfilePass extends AppCompatActivity {
         Intent itLogout = new Intent(EditProfilePass.this, signin.class);
         startActivity(itLogout);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

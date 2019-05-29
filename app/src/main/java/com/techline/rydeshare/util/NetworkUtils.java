@@ -91,16 +91,20 @@ public class NetworkUtils {
     final static String PARAM_DURATION = "duration";
     final static String PARAM_AMOUNT = "amount";
     private static String PARAM_CONV_ID = "conv_id";
+    final static String PARAM_ACCT_NO = "accountNumber";
+    private static String PARAM_STATUS = "status";
 
     /**
      * Builds the URL used to query Database.
      *
      * @params Keyword that will be queried for.
      */
-    public static URL buildInsertUserUrl(String firstNameValue, String lastNameValue,String fullnameValue, String emailValue, String usernameValue,
+    public static URL buildInsertUserUrl(String firstNameValue, String lastNameValue,String fullnameValue,
+                                         String emailValue, String usernameValue,
                                          String phoneValue, String passwordValue, String stateValue,
                                          String countryValue, String CurrentCityValue, String UserTypeValue,
-                                         String BalanceValue) {
+                                         String BalanceValue, String ActNoValue,
+                                         String StatusValue) {
         Uri builtUri = Uri.parse(BASE_INSERT_USER_URL).buildUpon()
                 .appendQueryParameter(PARAM_FIRST_NAME, firstNameValue)
                 .appendQueryParameter(PARAM_LAST_NAME, lastNameValue)
@@ -114,6 +118,8 @@ public class NetworkUtils {
                 .appendQueryParameter(PARAM_CURRENT_CITY, CurrentCityValue)
                 .appendQueryParameter(PARAM_USER_TYPE, UserTypeValue)
                 .appendQueryParameter(PARAM_BALANCE, BalanceValue)
+                .appendQueryParameter(PARAM_ACCT_NO, ActNoValue)
+                .appendQueryParameter(PARAM_STATUS, StatusValue)
 
 //                .appendQueryParameter(PARAM_SORT, sortBy)
                 .build();

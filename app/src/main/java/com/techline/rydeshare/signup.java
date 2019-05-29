@@ -136,12 +136,13 @@ public class signup extends AppCompatActivity {
         editor.putString("status", "ACTIVE");
     }
 
-    private void makeRideShareInsertUserQuery(String strFirstName, String strLstName, String strFullName, String strEmail,
+    private void makeRideShareInsertUserQuery(String strFirstName, String strLastName, String strFullName, String strEmail,
                                               String strUser, String strPhone, String curreCityValue,
                                               String strPass, String stateValue, String CountryValue,
                                               String type) {
-        URL RideShareSelectUserURl = NetworkUtils.buildInsertUserUrl(strFirstName, strLstName,strFullName, strEmail, strUser,
-                strPhone, strPass, "LAGOS", "NIGERIA", "NA", "PASSENGER", "0.00");
+        URL RideShareSelectUserURl = NetworkUtils.buildInsertUserUrl(strFirstName, strLastName,strFullName, strEmail, strUser,
+                strPhone, strPass, "LAGOS", "NIGERIA", "NA", "PASSENGER", "0.00",
+                accountNumber, "ACTIVE");
         Log.d(TAG, "RideShareSearchUrl is: " + RideShareSelectUserURl.toString());
         // COMPLETED (4) Create a new RideShareQueryTask and call its execute method, passing in the url to query
         new signup.RideShareInsertQueryTask().execute(RideShareSelectUserURl);
