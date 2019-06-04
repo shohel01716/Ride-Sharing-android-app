@@ -11,4 +11,6 @@
     <dimen name="view_5db">5dp</dimen>
     <dimen name="img_30db">30dp</dimen>
     <dimen name="size_50db">50dp</dimen>
+    <dimen name="txt_h_30db">30dp</dimen>
+    <dimen name="img_80db">80dp</dimen>
 </resources>
