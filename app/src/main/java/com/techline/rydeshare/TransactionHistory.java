@@ -23,7 +23,7 @@ public class TransactionHistory extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction_history);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Transaction History"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar

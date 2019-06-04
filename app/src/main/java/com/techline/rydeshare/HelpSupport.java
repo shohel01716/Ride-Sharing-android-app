@@ -23,7 +23,7 @@ public class HelpSupport extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_support);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Help & Support"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar

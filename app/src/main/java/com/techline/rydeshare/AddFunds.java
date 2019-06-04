@@ -31,7 +31,7 @@ public class AddFunds extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_funds);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Add Funds"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar

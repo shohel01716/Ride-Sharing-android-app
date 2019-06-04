@@ -23,7 +23,7 @@ public class RegisterRoute2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_route2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Route 2"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar

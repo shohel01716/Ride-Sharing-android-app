@@ -23,7 +23,7 @@ public class StartRide extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_ride);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Start Ride"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
